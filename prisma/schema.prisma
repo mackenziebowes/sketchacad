@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model EmailChallenge {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  key       String   @unique
+  createdAt DateTime @default(now())
+  expiresAt DateTime @default(dbgenerated("(now() + interval '10 minutes')"))
+}
+
+// Magic link is basically an email challenge,
+// but gives user a link with a query parameter that is forwarded
+// to the server rather than have the user type it out.
+model MagicLinkChallenge {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  key       String   @unique
+  createdAt DateTime @default(now())
+  expiresAt DateTime @default(dbgenerated("(now() + interval '10 minutes')"))
+}
+
+model PasswordResetChallenge {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  key       String   @unique
+  createdAt DateTime @default(now())
+  expiresAt DateTime @default(dbgenerated("(now() + interval '10 minutes')"))
+}

@@ -1,0 +1,19 @@
+:root {
+	--bg-a: #030101;
+	--bg-e: #1d1a17;
+	--bg-i: #33312f;
+	--bg-o: #4a4948;
+	--fg-a: #b6b2af;
+	--fg-e: #d9d4d0;
+	--fg-i: #ebe6e1;
+	--fg-o: #fdf7f2;
+	--c-a-a: #84d9b6;
+	--c-a-e: #b8ebd8;
+	--c-a-i: #defcf4;
+	--c-e-a: #78d8dd;
+	--c-e-e: #b0ebed;
+	--c-e-i: #d7fcfc;
+	--c-i-a: #81d0fd;
+	--c-i-e: #b6e6fe;
+	--c-i-i: #dcfaff;
+}
