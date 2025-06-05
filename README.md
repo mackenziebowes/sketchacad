@@ -1,5 +1,7 @@
 # SketchAcad
 
+![Vibe Coded](https://img.shields.io/badge/vibe-coded-622118)
+
 A modern voxel-based 3D modeling tool that uses orthographic projections to create 3D models from 2D drawings.
 
 ## Overview
